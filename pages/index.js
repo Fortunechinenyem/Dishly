@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 
 import { fetchRecipes } from "../utils/api";
+import RecipeList from "@/app/components/RecipeList";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -17,7 +18,7 @@ const HomePage = () => {
   return (
     <div>
       <h1 className="text-center text-2xl font-bold">Welcome to Dishly</h1>
-      {/* <RecipeList recipes={recipes} /> */}
+      <RecipeList recipes={recipes} />
     </div>
   );
 };
