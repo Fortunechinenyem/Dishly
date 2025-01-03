@@ -1,8 +1,8 @@
 import RecipeCard from "./RecipeCard";
 
 const RecipeList = ({ recipes }) => {
-  if (recipes.length === 0) {
-    return <p>No recipes found.</p>;
+  if (!recipes || recipes.length === 0) {
+    return <p className="text-center text-lg">No recipes found.</p>;
   }
 
   return (
