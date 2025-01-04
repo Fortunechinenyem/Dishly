@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { fetchRecipes } from "../utils/api";
 import Link from "next/link";
-import Image from "next/image";
+
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 
@@ -103,7 +103,7 @@ const HomePage = () => {
                 key={recipe.id}
                 className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition"
               >
-                <Image
+                <img
                   src={recipe.image}
                   height={200}
                   width={300}
