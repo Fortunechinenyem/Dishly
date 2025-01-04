@@ -1,16 +1,16 @@
-import RecipeCard from "./RecipeCard";
+import React from "react";
 
 const RecipeList = ({ recipes }) => {
   if (!recipes || recipes.length === 0) {
-    return <p className="text-center text-lg">No recipes found.</p>;
+    return <p>No recipes found.</p>;
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ul>
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
+        <li key={recipe.id}>{recipe.title}</li>
       ))}
-    </div>
+    </ul>
   );
 };
 

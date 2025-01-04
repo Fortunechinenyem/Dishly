@@ -9,7 +9,8 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadRecipes = async () => {
-      const data = await fetchRecipes("popular");
+      const data = await fetchRecipes("dishes");
+      console.log("Fetched Recipes:", data);
       setRecipes(data);
     };
     loadRecipes();
