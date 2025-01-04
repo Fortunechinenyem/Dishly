@@ -1,0 +1,80 @@
+import { Logo } from "@/public/images";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        <div className="text-xl font-bold text-blue-600">
+          <Link href="/">
+            <Image src={Logo} alt="logo" width={100} height={100} />
+          </Link>
+        </div>
+
+        <div className="hidden md:flex gap-6 items-center">
+          <Link href="/" className="text-gray-700 hover:text-blue-600">
+            Home
+          </Link>
+          <Link href="/recipes" className="text-gray-700 hover:text-blue-600">
+            Recipes
+          </Link>
+          <Link href="/favorites" className="text-gray-700 hover:text-blue-600">
+            Favorites
+          </Link>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="border rounded p-2 pl-10 pr-4 text-gray-700"
+            />
+            <span className="absolute top-1/2 left-2 transform -translate-y-1/2 text-gray-500">
+              🔍
+            </span>
+          </div>
+        </div>
+
+        <div className="md:hidden flex items-center">
+          <button className="text-gray-700" onClick={toggleMenu}>
+            {isMenuOpen ? "✖" : "☰"}
+          </button>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div className="bg-white shadow-md p-4 md:hidden">
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="text-gray-700 hover:text-blue-600">
+              Home
+            </Link>
+            <Link href="/recipes" className="text-gray-700 hover:text-blue-600">
+              Recipes
+            </Link>
+            <Link
+              href="/favorites"
+              className="text-gray-700 hover:text-blue-600"
+            >
+              Favorites
+            </Link>
+            <div>
+              <input
+                type="text"
+                placeholder="Search..."
+                className="border rounded p-2 w-full text-gray-700"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
