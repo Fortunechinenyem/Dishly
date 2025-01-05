@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between md:flex-row flex-col gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-xl font-bold mb-2">Dishy</h3>
+            <h3 className="text-xl font-bold mb-2">Dishly</h3>
             <p className="text-sm">Your go-to app for all things recipes!</p>
           </div>
 

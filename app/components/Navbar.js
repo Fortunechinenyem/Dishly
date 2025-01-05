@@ -13,10 +13,11 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <div className="text-xl font-bold text-blue-600">
+        <div className="text-xl flex justify-between font-bold text-[#288537]">
           <Link href="/">
-            <Image src={Logo} alt="logo" width={100} height={100} />
+            <Image src={Logo} alt="logo" width={50} height={50} />
           </Link>
+          <p className="mt-5">Dishly</p>
         </div>
 
         <div className="hidden md:flex gap-6 items-center">
