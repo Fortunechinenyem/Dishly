@@ -62,6 +62,7 @@ const HomePage = () => {
               <option value="mexican">Mexican</option>
               <option value="indian">Indian</option>
               <option value="chinese">Chinese</option>
+              <option value="chinese">French</option>
             </select>
 
             <select
