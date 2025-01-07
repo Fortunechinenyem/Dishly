@@ -1,10 +1,38 @@
 import { FavoritesContext } from "@/context/FavoritesContext";
 import Image from "next/image";
 import { useContext } from "react";
+import { useSession } from "next-auth/react";
 
 const RecipeCard = ({ recipe }) => {
+  const { data: session } = useSession();
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoritesContext);
+  const saveToFavorites = async () => {
+    if (!session) {
+      alert("Please sign in to save recipes.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/favorites", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          recipeId: recipe.id,
+          title: recipe.title,
+          image: recipe.image,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save recipe");
+      }
+
+      alert("Recipe saved to favorites!");
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   const isFavorite = favorites.some((fav) => fav.id === recipe.id);
 
@@ -36,6 +64,12 @@ const RecipeCard = ({ recipe }) => {
         } text-white`}
       >
         {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+      </button>
+      <button
+        onClick={saveToFavorites}
+        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+      >
+        Save to Favorites
       </button>
     </div>
   );

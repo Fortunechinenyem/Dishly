@@ -2,9 +2,11 @@ import { Logo } from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,6 +42,26 @@ const Navbar = () => {
               🔍
             </span>
           </div>
+        </div>
+        <div>
+          {session ? (
+            <div className="flex items-center gap-4">
+              <p>Welcome, {session.user.name}!</p>
+              <button
+                onClick={() => signOut()}
+                className="text-red-500 hover:underline"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => signIn()}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            >
+              Sign In
+            </button>
+          )}
         </div>
 
         <div className="md:hidden flex items-center">

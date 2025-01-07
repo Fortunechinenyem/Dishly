@@ -1,13 +1,12 @@
+import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 
-function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-
-  useEffect(() => {}, [router.pathname]);
-
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
 }
 
 export default MyApp;
