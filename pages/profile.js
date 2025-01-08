@@ -19,7 +19,11 @@ const Profile = () => {
   }, [session]);
 
   if (!session) {
-    return <p>Please sign in to view your profile.</p>;
+    return (
+      <p className="text-2xl text-center mt-7 font-bold">
+        Please sign in to view your profile.
+      </p>
+    );
   }
 
   return (
