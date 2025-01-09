@@ -63,7 +63,7 @@ export default function RecipeDetails({ recipe }) {
       <div className="flex justify-center mt-6">
         <button
           onClick={() => saveToFavorites(recipe)}
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition shadow-lg"
+          className="bg-[#288537] text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition shadow-lg"
         >
           Save to Favorites
         </button>

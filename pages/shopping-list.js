@@ -107,7 +107,7 @@ const ShoppingList = () => {
           />
           <button
             type="submit"
-            className="bg-blue-500 text-white px-6 py-3 rounded w-full md:w-auto hover:bg-blue-600 transition"
+            className="bg-[#288537] text-white px-6 py-3 rounded w-full md:w-auto hover:bg-blue-600 transition"
           >
             Add Item
           </button>
@@ -116,7 +116,7 @@ const ShoppingList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.keys(categories).map((category) => (
             <div key={category} className="bg-white shadow-md rounded-lg p-4">
-              <h2 className="text-lg font-semibold mb-2 text-blue-600">
+              <h2 className="text-lg font-semibold mb-2 text-[#288537]">
                 {category}
               </h2>
               <ul>

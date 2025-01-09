@@ -91,7 +91,7 @@ const HomePage = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded w-full md:w-auto hover:bg-blue-600 transition"
+              className="bg-[#288537] text-white px-6 py-3 rounded w-full md:w-auto hover:bg-blue-600 transition"
             >
               Search
             </button>
@@ -115,7 +115,7 @@ const HomePage = () => {
                   <h2 className="text-lg font-semibold mb-2">{recipe.title}</h2>
                   <Link
                     href={`/recipes/${recipe.id}`}
-                    className="text-blue-500 hover:underline"
+                    className="text-[#288537] hover:underline"
                   >
                     View Details
                   </Link>
