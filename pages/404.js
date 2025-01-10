@@ -4,9 +4,9 @@ const Custom404 = () => {
   return (
     <div
       className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white"
-      // style={{
-      //   backgroundImage: 'url("/images/hero.png")',
-      // }}
+      style={{
+        backgroundImage: 'url("/images/hero.jpg")',
+      }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="relative z-10 text-center px-6">
