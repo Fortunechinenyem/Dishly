@@ -29,17 +29,6 @@ const Footer = () => {
                 Favorites
               </Link>
             </div>
-            <div className="flex flex-col">
-              <Link href="/about" className="text-gray-300 hover:text-blue-400">
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-gray-300 hover:text-blue-400"
-              >
-                Contact
-              </Link>
-            </div>
           </div>
 
           <div className="flex gap-4">
