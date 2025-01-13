@@ -83,9 +83,7 @@ const ShoppingList = () => {
     <div>
       <Navbar />
       <div className="p-6 max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">
-          Consolidated Shopping List
-        </h1>
+        <h1 className="text-3xl font-bold text-center mb-8">Shopping List</h1>
 
         <form
           onSubmit={handleAddManualItem}

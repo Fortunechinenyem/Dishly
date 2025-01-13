@@ -5,7 +5,7 @@ import Footer from "@/app/components/Footer";
 
 const ArticlePage = () => {
   const router = useRouter();
-  const { id } = router.query; // Get the article ID from the URL
+  const { id } = router.query;
   const [article, setArticle] = useState(null);
   const [error, setError] = useState(null);
 
