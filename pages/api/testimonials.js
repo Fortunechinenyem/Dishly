@@ -2,15 +2,15 @@ export default function handler(req, res) {
   const testimonials = [
     {
       message: "Dishly has transformed my cooking experience!",
-      name: "Jane Doe",
+      name: "Jayden Karo",
     },
     {
       message: "I love the variety of recipes available!",
-      name: "John Smith",
+      name: "Muri Okunola",
     },
     {
       message: "The search and filters make it easy to find what I need.",
-      name: "Alice Johnson",
+      name: "Halley Berry",
     },
   ];
 
